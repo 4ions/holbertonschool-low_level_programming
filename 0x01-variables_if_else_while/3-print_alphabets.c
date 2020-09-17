@@ -5,9 +5,12 @@
  */
 int main(void)
 {
-char letra;
-for (letra = 'a'; letra <= 'z'; letra++)
-putchar(letra);
+char a;
+char c;
+for (a = 'a'; a <= 'z'; a++)
+putchar(a);
+for (c = 'A'; c <= 'Z'; c++)
+putchar(c);
 
 putchar('\n');
 return (0);
