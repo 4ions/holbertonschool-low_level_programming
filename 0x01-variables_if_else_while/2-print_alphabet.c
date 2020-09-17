@@ -5,12 +5,9 @@
  */
 int main(void)
 {
-int letra = 97;
-while (letra < 123)
-{
+char letra;
+for (letra = 'a'; letra <= 'z'; letra++)
 putchar(letra);
-putchar('\n');
-letra = letra + 1;
-}
+putchar('n');
 return (0);
 }
