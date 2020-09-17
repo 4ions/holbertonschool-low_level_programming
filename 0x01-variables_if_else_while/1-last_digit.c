@@ -5,9 +5,6 @@
  *main - Prints the method
  *Return: Always 0
  */
-/* more headers goes there */
-
-/* betty style doc for function main goes there */
 int main(void)
 {
 int n;
@@ -16,17 +13,17 @@ srand(time(0));
 n = rand() - RAND_MAX / 2;
 int lastDigit;
 lastDigit = n % 10;
-if (lastDigit != 0 && lastDigit < 6)
+if (lastDigit > 5)
 {
-printf("Last digit of %d is %d and is less than 6 and not 0 \n", n, lastDigit);
+printf("Last digit of %d is %d and is greater than 5\n", n, lastDigit);
 }
-else if (lastDigit > 5)
+else if (lastDigit == 0)
 {
-printf("Last digit of %d is %d and is greater than 5 \n", n, lastDigit);
+printf("Last digit of %d is %d and is 0\n", n, lastDigit);
 }
-else
+ else if (lastDigit =! 0 && lastDigir < 6)
 {
-printf("Last digit of %d is %d and is 0", n, lastDigit);
+printf("Last digit of %d is %d and is less than 6 and not 0", n, lastDigit);
 }
 return (0);
 }
