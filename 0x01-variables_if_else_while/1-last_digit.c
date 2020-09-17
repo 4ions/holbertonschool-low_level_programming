@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 /**
  *main - Prints the method
  *Return: Always 0
