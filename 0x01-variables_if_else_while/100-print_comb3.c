@@ -16,7 +16,7 @@ putchar(48 + y);
 putchar(48 + x);
 if (z < 89)
 {
-putchar(' , ');
+putchar(',');
 putchar(' ');
 }
 }
