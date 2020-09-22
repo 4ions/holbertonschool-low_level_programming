@@ -1,4 +1,4 @@
-#include "bootcamp.h"
+#include "holberton.h"
 /**
  * print_times_table - prints nx times table
  * @n: value of how large the times table should be
