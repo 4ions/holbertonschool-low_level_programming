@@ -1,49 +1,40 @@
 #include "holberton.h"
 /**
- * print_times_table - prints the n times table starting with 0 between 0-15
- * @n: Integer
+ * times_table - prints the 9 times table starting with 0
+ * void: No return
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-void print_times_table(int n)
+void times_table(void)
 {
-if (n < 16 && n > -1)
+int i, j, n;
+for (i = 0; i <= 9; i++)
 {
-int column, row, sum, h, t, o;
-
-column = 0;
-while (column <= n)
+for (j = 0; j <= 9; j++)
 {
-_putchar('0');
-row = 1;
-while (row <= n)
+n = i * j;
+if (n > 9)
 {
-sum = column *row;
-h = sum / 100, t = sum / 10 % 10, o = sum % 10;
-_putchar(',');
-_putchar(' ');
-if (sum > 99)
+if (j != 0)
 {
-_putchar('0' + h);
-_putchar('0' + t);
-_putchar('0' + o);
+_putchar(44);
+_putchar(32);
 }
-else if (sum < 10)
-{
-_putchar(' ');
-_putchar(o + '0');
+_putchar('0' + n / 10);
+_putchar('0' + n % 10);
 }
 else
 {
-gcc -Wall -pedantic -Werror -Wextra _putchar.c 9-main.c 9-times_table.c -o 9-times_table
-
-_putchar(t + '0');
-_putchar(o + '0');
+if (j != 0)
+{
+_putchar(44);
+_putchar(32);
+_putchar(32);
 }
-row++;
+_putchar('0' + n);
+}
 }
 _putchar('\n');
-column++;
 }
 }
