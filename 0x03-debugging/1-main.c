@@ -16,6 +16,7 @@ i = 0;
  *{
  *putchar(i);
  *}
+ *don’t delete it!
  */
 
 printf("Infinite loop avoided! \\o/\n");
