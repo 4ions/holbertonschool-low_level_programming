@@ -9,7 +9,7 @@ void print_times_table(int n)
 {
 if (n < 16 && n > -1)
 {
-int column, row, sum, h, t, o;     
+int column, row, sum, h, t, o;
 column = 0;
 while (column <= n)
 {
@@ -17,7 +17,7 @@ _putchar('0');
 row = 1;
 while (row <= n)
 {
-sum = column * row;
+sum = column *row;
 h = sum / 100, t = sum / 10 % 10, o = sum % 10;
 _putchar(',');
 _putchar(' ');
