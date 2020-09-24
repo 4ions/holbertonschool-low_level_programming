@@ -17,6 +17,6 @@ while (numero % i == 0)
 numero /= i;
 }
 }
-printf("%li\n ", numero);
+printf("%li\n", numero);
 return (0);
 }
