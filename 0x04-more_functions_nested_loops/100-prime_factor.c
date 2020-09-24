@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "holberton.h"
 /**
  *main - function to print the mayor number
  *Return: no return
