@@ -14,9 +14,9 @@ while (str[i] != '\0')
 {
 i++;
 }
-while(j < i)
+while (j < i)
 {
-if(j % 2 == 0)
+if (j % 2 == 0)
 {
 _putchar(str[i]);
 }
