@@ -11,8 +11,15 @@ int i;
 i = 0;
 while (str[i] != '\0')
 {
+i++;
+}
+while(j < i)
+{
+if(j % 2 == 0)
+{
 _putchar(str[i]);
-i += 2;
+}
+j++;
 }
 _putchar('\n');
 }
