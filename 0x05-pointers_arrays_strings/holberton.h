@@ -42,7 +42,6 @@ void puts2(char *str);
 #define PUTS_HALF_H
 void puts_half(char *str);
 #endif
-<<<<<<< HEAD
 
 #ifndef PRINT_ARRAY_H
 #define PRINT_ARRAY_H
