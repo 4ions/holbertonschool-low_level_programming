@@ -48,7 +48,7 @@ void puts_half(char *str);
 void print_array(int *a, int n);
 #endif
 
-#ifndef _STRCPY_H
-#define _STRCPY_H
-int *_strcpy(char *dest, char *src);
+#ifndef _STRCPY
+#define _STRCPY
+char *_strcpy(char *dest, char *src);
 #endif
