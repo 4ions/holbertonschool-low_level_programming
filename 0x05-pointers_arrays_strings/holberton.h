@@ -53,5 +53,3 @@ void print_array(int *a, int n);
 #define _STRCPY_H
 int *_strcpy(char *dest, char *src);
 #endif
-=======
->>>>>>> 1d644e8e101264973126cee2337e80f02e7d4443
