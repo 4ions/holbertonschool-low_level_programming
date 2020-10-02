@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  *cap_string - capitalizes all words of a string
- *@n: string
+ *@s: string
  *
  *Return: char
  */
