@@ -28,8 +28,8 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		for (k = 0; k < m; k++)
 		{
-			if (s[i] == accept[k])
-			{
+			if (*(s + i ) == *(accept + k))
+			{ 
 				j += 1;
 				break;
 			}
