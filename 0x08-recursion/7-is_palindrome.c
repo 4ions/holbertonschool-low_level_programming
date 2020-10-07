@@ -1,15 +1,15 @@
 #include "holberton.h"
 /**
- *es_Palindromo - check if a string is palindrome
+ *es_palindromo - check if a string is palindrome
  *@s: string
  *@index: index
  *
  *Return: int
  */
 
-int es_Palindromo(char *s, int index)
+int es_palindromo(char *s, int index)
 {
-	int i, j;
+	int i;
 
 	i = 0;
 
@@ -18,19 +18,19 @@ int es_Palindromo(char *s, int index)
 		i++;
 	}
 	i = i - 1 - index;
-	if (s[index] == s[i])
+	if (s[index] != s[i])
+	{
+		return (0);
+	}
+	else if (s[index] == s[i])
 	{
 		if (index + 1 == i || index == i)
 		{
 			return (1);
 		}
-		es_Palindromo(s, index + 1);
+		es_palindromo(s, index + 1);
 	}
-	else
-	{
-	return (0);
-	}
-
+	return (1);
 }
 
 /**
@@ -41,5 +41,5 @@ int es_Palindromo(char *s, int index)
  */
 int is_palindrome(char *s)
 {
-	return (es_Palindromo(s, 0));
+	return (es_palindromo(s, 0));
 }
