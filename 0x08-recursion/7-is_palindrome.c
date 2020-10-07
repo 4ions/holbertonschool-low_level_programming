@@ -1,45 +1,48 @@
 #include "holberton.h"
 /**
- *es_palindromo - check if a string is palindrome
- *@s: string
- *@index: index
+ * palind2 - obtains length of a
+ * @a: string
+ * @l: integer to count length
  *
- *Return: int
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 
-int es_palindromo(char *s, int index)
+int palind2(char *a, int l)
 {
-	int i;
-
-	i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	i = i - 1 - index;
-	if (s[index] != s[i])
-	{
-		return (0);
-	}
-	else if (s[index] == s[i])
-	{
-		if (index + 1 == i || index == i)
-		{
-			return (1);
-		}
-		es_palindromo(s, index + 1);
-	}
-	return (1);
+	if (*a == 0)
+		return (l - 1);
+	return (palind2(a + 1, l + 1));
 }
-
 /**
- *is_palindrome - check if a string is palindrome
- *@s: string
+ * palind3 - compares string vs string reverse
+ * @a: string
+ * @l: length
  *
- *Return: int
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+
+int palind3(char *a, int l)
+{
+	if (*a != *(a + l))
+		return (0);
+	else if (*a == 0)
+		return (1);
+	return (palind3(a + 1, l - 2));
+}
+/**
+ * is_palindrome - checks if a string is a palindrome
+ * @s: string to evaluate
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 int is_palindrome(char *s)
 {
-	return (es_palindromo(s, 0));
+	int l;
+
+	l = palind2(s, 0);
+	return (palind3(s, l));
 }
+
