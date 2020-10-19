@@ -16,3 +16,7 @@ typedef struct dog
 } dog_t;
 #endif
 
+#ifndef INIT_DOG_H
+#define INIT_DOG_H
+void init_dog(struct dog *d, char *name, float age, char *owner);
+#endif
