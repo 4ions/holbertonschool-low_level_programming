@@ -20,3 +20,8 @@ typedef struct dog
 #define INIT_DOG_H
 void init_dog(struct dog *d, char *name, float age, char *owner);
 #endif
+
+#ifndef PRINT_DOG_H
+#define PRINT_DOG_H
+void print_dog(struct dog *d);
+#endif
