@@ -1,57 +1,19 @@
 #include "dog.h"
 #include <stdlib.h>
-#include <stdio.h>
-
-
 /**
- * _strdup - returns a pointer to a newly allocated space in memory, which
- * contains a copy of the string given as a parameter.
- * @str: string to copy
+ * free_dog - frees memory of structure dogs
+ * @d: pointer of structure
  *
- * Return: Pointer
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-char *_strdup(char *str)
+
+void free_dog(dog_t *d)
 {
-	int l, i;
-	char *s;
-
-	if (str == NULL)
-		return (0);
-
-	l = 0;
-	while (*(str + l))
-		l++;
-
-	s = malloc(sizeof(char) * l + 1);
-
-	if (s == 0)
-		return (0);
-
-	for (i = 0; i <= l; i++)
+	if (d != NULL)
 	{
-		*(s + i) = *(str + i);
+		free(d->name);
+		free(d);
+		free(d->owner);
 	}
-	return (s);
-}
-
-/**
- *new_dog - new dog
- *@name: name of dog
- *@age: age of dog
- *@owner: owner of dog
- *
- *Return: dot_t type
- */
-
-dog_t *new_dog(char *name, float age, char *owner)
-{
-	dog_t *my_dog;
-
-	my_dog = malloc(sizeof(dog_t));
-	if (my_dog == NULL)
-		return (NULL);
-	my_dog->name = _strdup(name);
-	my_dog->age = age;
-	my_dog->owner = _strdup(owner);
-	return (my_dog);
 }
