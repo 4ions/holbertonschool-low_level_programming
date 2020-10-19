@@ -25,3 +25,8 @@ void init_dog(struct dog *d, char *name, float age, char *owner);
 #define PRINT_DOG_H
 void print_dog(struct dog *d);
 #endif
+
+#ifndef NEW_DOG_H
+#define NEW_DOG_H
+dog_t *new_dog(char *name, float age, char *owner);
+#endif
