@@ -1,4 +1,6 @@
 #include "variadic_functions.h"
+#include <stdarg.h>
+#include <stdio.h>
 /**
  *pchar - Print c
  *@list: variadic list
@@ -40,7 +42,7 @@ void pstring(va_list list)
 	char *verif;
 
 	verif =  va_arg(list, char *);
-	if (verif == NULL)
+	if (verif == 0)
 	{
 		verif = "(nil)";
 	}
