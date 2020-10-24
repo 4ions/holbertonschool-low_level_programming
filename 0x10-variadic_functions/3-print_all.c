@@ -1,58 +1,88 @@
 #include "variadic_functions.h"
-
 /**
- *print_all - print anything
- *@format: all characters
+ *pchar - Print c
+ *@list: variadic list
+ *
+ *Return: No return
+ */
+void pchar(va_list list)
+{
+	printf("%c", va_arg(list, int));
+}
+/**
+ *pint - Print c
+ *@list: variadic list
+ *
+ *Return: No return
+ */
+void pint(va_list list)
+{
+	printf("%d", va_arg(list, int));
+}
+/**
+ *pfloat - Print c
+ *@list: variadic list
+ *
+ *Return: No return
+ */
+void pfloat(va_list list)
+{
+	printf("%f", va_arg(list, double));
+}
+/**
+ *pstring - Print c
+ *@list: variadic list
+ *
+ *Return: No return
+ */
+void pstring(va_list list)
+{
+	char *verif;
+
+	verif =  va_arg(list, char *);
+	if (verif == NULL)
+	{
+		verif = "(nil)";
+	}
+	printf("%s", verif);
+}
+/**
+ *print_all - Print all
+ *@format: variadic format
  *
  *Return: No return
  */
 void print_all(const char * const format, ...)
 {
-	va_list printAll;
-	char *sep = " ,";
-	char *string;
+
+	fp_ fa[] = {
+		{"c", pchar},
+		{"i", pint},
+		{"f", pfloat},
+		{"s", pstring}
+	};
+
 	int i, j;
+	char *sepa = "";
+	va_list list;
 
-	va_start(printAll, format);
-
+	va_start(list, format);
+	i = 0;
 	while (format[i])
-		i++;
-	while (format[j])
 	{
-		if (j == (i - 1))
+		j = 0;
+		while (j < 4)
 		{
-			sep = "";
-		}
-		switch (format[j])
-		{
-		case 'c':
-		{
-			printf("%c%s", va_arg(printAll, int), sep);
-			break;
-		}
-		case 'i':
-		{
-			printf("%d%s", va_arg(printAll, int), sep);
-			break;
-		}
-		case 'f':
-		{
-			printf("%f%s", va_arg(printAll, double), sep);
-			break;
-		}
-		case 's':
-		{
-			string = va_arg(printAll, char *);
-			if (string == NULL)
+			if (format[i] == fa[j].tp[0])
 			{
-				string = "(nil)";
+				printf("%s", sepa);
+				fa[j].func(list);
+				sepa = ", ";
 			}
-			printf("%s%s", string, sep);
-			break;
+			j++;
 		}
-		}
-		j++;
+		i++;
 	}
 	printf("\n");
-	va_end(printAll);
+	va_end(list);
 }
