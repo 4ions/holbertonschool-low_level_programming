@@ -17,7 +17,7 @@ void pchar(va_list list)
  */
 void pint(va_list list)
 {
-	printf("%d", va_arg(list, int));
+	printf("%i", va_arg(list, int));
 }
 /**
  *pfloat - Print c
@@ -62,12 +62,11 @@ void print_all(const char * const format, ...)
 		{"s", pstring}
 	};
 
-	int i, j;
-	char *sepa = "";
+	int i = 0, j = 0;
 	va_list list;
+	char *sepa = "";
 
 	va_start(list, format);
-	i = 0;
 	while (format[i])
 	{
 		j = 0;
