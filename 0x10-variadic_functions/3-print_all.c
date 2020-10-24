@@ -69,7 +69,7 @@ void print_all(const char * const format, ...)
 	char *sepa = "";
 
 	va_start(list, format);
-	while (format[i])
+	while (format && format[i])
 	{
 		j = 0;
 		while (j < 4)
