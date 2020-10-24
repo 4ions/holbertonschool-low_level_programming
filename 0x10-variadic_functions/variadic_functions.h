@@ -4,6 +4,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+/**
+ *struct fp - struct op
+ *
+ *@tp: parameter
+ *@func: function associated
+ */
+typedef struct fp
+
+{
+	char *tp;
+	void (*func)(va_list);
+} fp_;
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
