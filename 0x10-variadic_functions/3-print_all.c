@@ -42,7 +42,7 @@ void pstring(va_list list)
 	char *verif;
 
 	verif =  va_arg(list, char *);
-	if (verif == 0)
+	if (verif == NULL)
 	{
 		verif = "(nil)";
 	}
