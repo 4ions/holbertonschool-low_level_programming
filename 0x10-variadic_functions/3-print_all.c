@@ -2,6 +2,7 @@
 
 /**
  *print_all - print anything
+ *@format: all characters
  *
  *Return: No return
  */
@@ -16,9 +17,9 @@ void print_all(const char * const format, ...)
 
 	while (format[i])
 		i++;
-	while(format[j])
+	while (format[j])
 	{
-		if(j == (i - 1))
+		if (j == (i - 1))
 		{
 			sep = "";
 		}
@@ -42,14 +43,13 @@ void print_all(const char * const format, ...)
 		case 's':
 		{
 			string = va_arg(printAll, char *);
-			if (string == NULL)	
+			if (string == NULL)
 			{
 				string = "(nil)";
 			}
 			printf("%s%s", string, sep);
 			break;
 		}
-		
 		}
 		j++;
 	}
