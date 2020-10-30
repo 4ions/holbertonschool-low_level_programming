@@ -19,7 +19,7 @@ printf("[%i] %s\n", h->len, h->str);
 }
 else
 {
-printf("[0] (nill)\n");
+printf("[0] (nil)\n");
 }
 h = h->next;
 size++;
