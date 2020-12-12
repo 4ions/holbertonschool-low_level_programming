@@ -8,7 +8,7 @@
  *@head: head of dobly linked list
  *@n: number was be in the node
  *
- *Return: return the new node on tail
+ *Return: return the new node on tail of the list
  */
 
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
