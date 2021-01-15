@@ -15,8 +15,8 @@ hash_node_t *add_hash_node(const char *key, const char *value)
 	if (!new_node)
 		return (NULL);
 
-	new_node->key = key;
-	new_node->value = value;
+	new_node->key = strdup(key);
+	new_node->value = strdup(value);
 
 	if (!new_node->key || !new_node->value)
 	{
@@ -54,7 +54,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			if (!strcmp(temp->key, key))
 			{
 				free(temp->value);
-				temp->value = value;
+				temp->value = strdup(value);
 				return (1);
 			}
 			temp = temp->next;
